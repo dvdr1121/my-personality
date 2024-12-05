@@ -79,17 +79,20 @@ export const results: Result[] = [
     minScore: 12,
     maxScore: 16,
     description: "あなたはボブが向いています！トレンド感と扱いやすさのバランスが取れたスタイルです。",
+    imageUrl: "/images/bob-cut.jpg" 
   },
   {
     name: "ショート",
     minScore: 17,
     maxScore: 21,
     description: "あなたはショートが向いています！シンプルでお洒落、かつ扱いやすいスタイルを求める方に最適です。",
+    imageUrl: "/images/short-cut.jpg"
   },
   {
     name: "韓国風ヘアー",
     minScore: 22,
     maxScore: 28,
     description: "あなたは韓国風ヘアーが向いています！トレンド感満載で、周りの注目を集めるスタイルです。",
+    imageUrl: "/images/korean-style.jpg"
   },
 ];
