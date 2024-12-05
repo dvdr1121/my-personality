@@ -72,6 +72,7 @@ export const results: Result[] = [
     minScore: 7,
     maxScore: 11,
     description: "あなたはウルフが向いています！個性的で印象的なスタイルを求める方に最適です。",
+    imageUrl: "/images/wolf-cut.jpg"
   },
   {
     name: "ボブ",

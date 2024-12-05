@@ -14,4 +14,5 @@ export interface Result {
   minScore: number;
   maxScore: number;
   description: string;
+  imageUrl: string;
 }

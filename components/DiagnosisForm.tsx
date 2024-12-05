@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { questions, results } from '../lib/data';
 import { Result } from '../lib/types';
 
