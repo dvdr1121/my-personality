@@ -1,5 +1,3 @@
-import { Question, Result } from '../lib/types';
-
 export const questions: Question[] = [
   {
     id: 1,
@@ -107,5 +105,4 @@ export const results: Result[] = [
     maxScore: 28
   },
 ];
-
 
