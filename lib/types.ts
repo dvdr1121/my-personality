@@ -9,6 +9,7 @@ export interface Question {
 export interface Answer {
   text: string;
   type: AnswerType;
+  score: number;  // Add this line
 }
 
 export interface Result {
