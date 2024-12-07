@@ -78,24 +78,32 @@ export const results: Result[] = [
     name: "ウルフ",
     description: "個性的で印象的なウルフカットが似合います。毛流れやボリューム感を活かし、少し大胆で目を引くスタイルです。",
     imageUrl: "/images/wolf-cut.jpg",
-    type: 'A'
+    type: 'A',
+    minScore: 0,
+    maxScore: 2
   },
   {
     name: "ボブ",
     description: "シンプルでありながらお洒落なボブスタイルが向いています。まとまりが良く、お手入れがしやすいデザインです。",
     imageUrl: "/images/bob-cut.jpg",
-    type: 'B'
+    type: 'B',
+    minScore: 3,
+    maxScore: 4
   },
   {
     name: "ショート",
     description: "すっきりとしたショートスタイルが似合います。シンプルでお洒落、かつ扱いやすいスタイルを求める方に最適です。",
     imageUrl: "/images/short-cut.jpg",
-    type: 'C'
+    type: 'C',
+    minScore: 5,
+    maxScore: 6
   },
   {
     name: "韓国風ヘアー",
     description: "トレンド感満載の韓国風ヘアスタイルが向いています。顔まわりのデザインや立体感を活かした、上品で流れるようなシルエットが特徴です。",
     imageUrl: "/images/korean-style.jpg",
-    type: 'D'
+    type: 'D',
+    minScore: 7,
+    maxScore: 7
   },
 ];

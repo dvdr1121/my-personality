@@ -16,6 +16,8 @@ export interface Result {
   description: string;
   imageUrl: string;
   type: AnswerType;
+  minScore: number;
+  maxScore: number;
 }
 
 export interface ScoreCount {
