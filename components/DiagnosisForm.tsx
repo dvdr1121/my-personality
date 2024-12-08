@@ -56,10 +56,10 @@ export default function DiagnosisForm() {
         
         <h3 className="text-lg font-semibold mt-6 mb-2">回答の内訳:</h3>
         <ul className="mb-6">
-          <li>A（ウルフ）: {scores.A}個</li>
-          <li>B（ボブ）: {scores.B}個</li>
-          <li>C（ショート）: {scores.C}個</li>
-          <li>D（韓国風ヘアー）: {scores.D}個</li>
+          <li>A（ボブ）: {scores.A}個</li>
+          <li>B（韓国ヘアー）: {scores.B}個</li>
+          <li>C（ウルフ）: {scores.C}個</li>
+          <li>D（ショート）: {scores.D}個</li>
         </ul>
         
         <h3 className="text-lg font-semibold mt-6 mb-2">全ての診断結果:</h3>
@@ -120,4 +120,5 @@ export default function DiagnosisForm() {
     </div>
   );
 }
+
 
