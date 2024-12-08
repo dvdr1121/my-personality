@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { questions, results } from '../lib/data';
-import { Result, ScoreCount, AnswerType } from '../lib/types';
+import { Result, ScoreCount, AnswerType, Answer } from '../lib/types';
 
 export default function DiagnosisForm() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -97,7 +97,7 @@ export default function DiagnosisForm() {
       <h2 className="text-2xl font-bold mb-4">ヘアスタイル診断</h2>
       <p className="mb-4">質問 {currentQuestion + 1} / {questions.length}</p>
       <p className="text-lg mb-4">{question.text}</p>
-      {question.answers.map((answer, index) => (
+      {question.answers.map((answer: Answer, index: number) => (
         <button
           key={index}
           onClick={() => handleAnswer(answer.type)}
