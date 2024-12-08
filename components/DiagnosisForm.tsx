@@ -80,9 +80,20 @@ export default function DiagnosisForm() {
             <p>{r.description}</p>
           </div>
         ))}
+        <div className="mt-8 text-center">
+          <p className="text-gray-600 mb-2">診断結果について相談や質問がありますか？</p>
+          <a 
+            href="https://business.i-producer.jp/chats/c026bfb8-72a1-4592-a106-627c57e0935f" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
+          >
+            お問い合わせはこちら
+          </a>
+        </div>
         <button
           onClick={resetQuiz}
-          className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          className="mt-6 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
         >
           もう一度診断する
         </button>
@@ -94,7 +105,7 @@ export default function DiagnosisForm() {
 
   return (
     <div className="max-w-md mx-auto mt-8 p-6 bg-white rounded-lg shadow-xl">
-      <h2 className="text-2xl font-bold mb-4">ヘアスタイル診断</h2>
+      <h2 className="text-2xl font-bold mb-4">推しカット診断</h2>
       <p className="mb-4">質問 {currentQuestion + 1} / {questions.length}</p>
       <p className="text-lg mb-4">{question.text}</p>
       {question.answers.map((answer: Answer, index: number) => (
