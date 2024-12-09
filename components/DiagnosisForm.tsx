@@ -29,30 +29,36 @@ export default function DiagnosisForm() {
     setShowResult(false);
   };
 
-  const getResult = (): Result => {
-    const totalScore = Object.values(scores).reduce((sum, score) => sum + score, 0);
-    return results.find(r => totalScore >= r.minScore && totalScore <= r.maxScore) || results[0];
+  const getResults = (): Result[] => {
+    const maxScore = Math.max(...Object.values(scores));
+    const winningTypes = Object.keys(scores).filter(type => scores[type as keyof ScoreCount] === maxScore);
+    return results.filter(r => winningTypes.includes(r.type));
   };
 
   if (showResult) {
-    const matchedResult = getResult();
+    const matchedResults = getResults();
 
     return (
       <div className="max-w-md mx-auto mt-8 p-6 bg-white rounded-lg shadow-xl">
         <h2 className="text-2xl font-bold mb-4">診断結果</h2>
-        <div className="mb-6 relative w-full aspect-square rounded-lg overflow-hidden">
-          <Image
-            src={matchedResult.imageUrl}
-            alt={`${matchedResult.name}のヘアスタイル例`}
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, 400px"
-          />
-        </div>
-        <p className="text-xl mb-2">
-          あなたに最も合っているのは<span className="font-bold text-blue-600">{matchedResult.name}</span>です！
-        </p>
-        <p className="mb-4">{matchedResult.description}</p>
+        {matchedResults.map((result, index) => (
+          <div key={result.type} className="mb-8">
+            <div className="mb-6 relative w-full aspect-square rounded-lg overflow-hidden">
+              <Image
+                src={result.imageUrl}
+                alt={`${result.name}のヘアスタイル例`}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 400px"
+              />
+            </div>
+            <p className="text-xl mb-2">
+              {index === 0 ? 'あなたに最も合っているのは' : 'もう1つの候補は'}
+              <span className="font-bold text-blue-600">{result.name}</span>です！
+            </p>
+            <p className="mb-4">{result.description}</p>
+          </div>
+        ))}
         
         <h3 className="text-lg font-semibold mt-6 mb-2">回答の内訳:</h3>
         <ul className="mb-6">
@@ -75,7 +81,7 @@ export default function DiagnosisForm() {
               />
             </div>
             <p className="font-medium">
-              {r.name}（タイプ {r.type}）
+              {r.name}（タイプ {r.type}）: {scores[r.type]}点
             </p>
             <p>{r.description}</p>
           </div>
@@ -120,5 +126,3 @@ export default function DiagnosisForm() {
     </div>
   );
 }
-
-
